@@ -3,7 +3,7 @@
 
 - - -
 
-不熟悉 docker 戳这里 [入门到实践](https://yeasy.gitbooks.io/docker_practice/install/mac.html)
+不熟悉 docker 戳这里 [入门到实践](https://yeasy.gitbooks.io/docker_practice/)
 
 ### 使用
 
