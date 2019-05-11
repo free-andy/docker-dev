@@ -1,5 +1,4 @@
 # mysql
-
 MYSQL_VERSION=5.7
 MYSQL_ROOT_PASSWORD=default
 MYSQL_DATABASE=default
