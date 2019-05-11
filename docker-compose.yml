@@ -35,9 +35,19 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ${APP_CODE_PATH}:/var/www/html
       - ${NGINX_LOG_PATH}:/var/log/nginx
+    depends_on:
+      - php-fpm
   redis:  
     build:
       context: './redis'
     ports:
       - '6379:6379'
-    
+  workspace:
+    build:
+      context: './workspace'
+      args:
+        - VERSION=${PHP_VERSION}
+    volumes:
+      - ${APP_CODE_PATH}:/var/www/html
+      - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
+      
