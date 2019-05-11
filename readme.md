@@ -3,14 +3,14 @@
 
 - - -
 
-不熟悉 docker 戳这里 [入门到实践](https://yeasy.gitbooks.io/docker_practice/install/mac.html)
+不熟悉 docker 戳这里 [入门到实践](https://yeasy.gitbooks.io/docker_practice/install/mac.html)
 
 ### 使用
 
 #### env
 
 ```
-// 确保 env 文件中指定的路径，已在宿主机中创建
+// 确保 env 文件中指定的路径，已在宿主机中创建
 mv env-example .env
 ```
 
@@ -27,5 +27,5 @@ docker-compose up -d nginx mysql redis
 
 #### PS
 
-1. 修改 `Dockerfile` `env` `docker-compose.yml` 文件后，删除对应服务容器，再重新构建镜像。
-2. php-fpm 目录中 `php.ini` 文件目前仅提供了 `7.2` 版本，若使用其他版本 php 请自行添加配置文件，请遵循 `php<PHP_VERSION>.ini` 命名规则，PHP_VERSION 为 env 中指定配置。
+1. 修改 `Dockerfile` `env` `docker-compose.yml` 文件后，删除对应服务容器，再重新构建镜像。
+2. php-fpm 目录中 `php.ini` 文件目前仅提供了 `7.2` 版本，若使用其他版本 php 请自行添加配置文件，请遵循 `php<PHP_VERSION>.ini` 命名规则，PHP_VERSION 为 env 中指定配置。
