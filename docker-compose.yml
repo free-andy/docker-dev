@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  mysql:
+    build:
+      context: './mysql'
+      args:
+        - VERSION=${MYSQL_VERSION}
+    ports:
+      - '3306:3306'  
+    environment:
+      - 'MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}'
+      - 'MYSQL_DATABASE=${MYSQL_DATABASE}'
+      - 'MYSQL_USER=${MYSQL_USER}'
+      - 'MYSQL_PASSWORD=${MYSQL_PASSWORD}'
+    volumes:
+      - ${MYSQL_DATA_PATH}:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+  php-fpm:
+    build:
+      context: './php-fpm'
+      args:
+        - VERSION=${PHP_VERSION}
+    volumes:
+      - ${APP_CODE_PATH}:/var/www/html
+      - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
+  nginx:
+    build:
+      context: './nginx'
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ${APP_CODE_PATH}:/var/www/html
+      - ${NGINX_LOG_PATH}:/var/log/nginx
+  redis:  
+    build:
+      context: './redis'
+    ports:
+      - '6379:6379'
+    

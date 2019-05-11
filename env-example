@@ -1,0 +1,15 @@
+# mysql
+
+MYSQL_VERSION=5.7
+MYSQL_ROOT_PASSWORD=default
+MYSQL_DATABASE=default
+MYSQL_USER=default
+MYSQL_PASSWORD=default
+MYSQL_DATA_PATH=/var/lib/mysql
+
+# php
+PHP_VERSION=7.2
+
+# nginx
+APP_CODE_PATH=../project
+NGINX_LOG_PATH=/var/log/nginx
