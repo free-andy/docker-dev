@@ -2,7 +2,7 @@ ARG VERSION
 FROM php:${VERSION}-fpm
 
 RUN apt-get update \
-    && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev git vim \
+    && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev git vim zip \
     && docker-php-ext-install -j$(nproc) mysqli pdo_mysql gd bcmath zip
 
 RUN curl -s http://getcomposer.org/installer | php && \
