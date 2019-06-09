@@ -56,15 +56,14 @@ services:
       - ${ELASTICSEARCH_DATA_PATH}:/usr/share/elasticsearch/data
     environment:
       - cluster.name=app-cluster
-      - bootstrap.memory_lock=true
+      - bootstrap.memory_lock=false
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     ulimits: # 限制 shell 启动进程所占用的资源
       memlock:
-        soft: -1
-        hard: -1
+        soft: 500
+        hard: 500
     ports:
       - "9200:9200"
       - "9300:9300"
     depends_on:
       - php-fpm
-      
