@@ -16,6 +16,6 @@ Run apt-get update \
 RUN curl -s http://getcomposer.org/installer | php \
     && echo "export PATH=${PATH}:/var/www/vendor/bin" >> ~/.bashrc \
     && mv composer.phar /usr/local/bin/composer \
-    && composer config -g repo.packagist composer https://packagist.laravel-china.org
+    && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
 RUN . ~/.bashrc
