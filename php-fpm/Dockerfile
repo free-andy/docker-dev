@@ -13,4 +13,6 @@ RUN apt-get update \
     && pecl install swoole \
     && docker-php-ext-enable swoole
 
+RUN usermod -u 1000 www-data
+
 EXPOSE 9000
