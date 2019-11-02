@@ -67,3 +67,15 @@ services:
       - "9300:9300"
     depends_on:
       - php-fpm
+  hbase:
+    image: dajobe/hbase
+    volumes:
+      - ${HBASE_DATA_PATH}/hbase:/data
+    ports:
+      - 16010:16010
+      - 2181:2181
+      - 8080:8080
+      - 8085:8085
+      - 9090:9090
+      - 9095:9095
+      
