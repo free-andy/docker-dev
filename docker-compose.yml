@@ -24,6 +24,12 @@ services:
     volumes:
       - ${APP_CODE_PATH}:/var/www/html
       - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
+  php-fpm5.6:
+    build:
+      context: './php-fpm5.6'
+    volumes:
+      - ${APP_CODE_PATH}:/var/www/html
+      - ./php-fpm5.6/php5.6.ini:/usr/local/etc/php/php.ini    
   nginx:
     build:
       context: './nginx'
