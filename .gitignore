@@ -1,2 +1,4 @@
 .env
 ./elasticsearch/data/*
+./redis/data/*
+./redis/*.log
