@@ -12,3 +12,9 @@ PHP_VERSION=7.2
 # nginx
 APP_CODE_PATH=../project
 NGINX_LOG_PATH=/var/log/nginx
+
+# elasticsearch
+ELASTICSEARCH_DATA_PATH=./elasticsearch/data
+
+# hbase
+HBASE_DATA_PATH=~/.hbase/data
